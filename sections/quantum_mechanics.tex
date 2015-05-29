@@ -1,0 +1,49 @@
+\section{Quantum Mechanics}
+\begin{align*}
+& \lambda = h/p = h/\gamma m v & &\text{de Broglie wavelength} \\
+& E_\gamma = h \nu & &p_\gamma = E_\gamma / c = h \nu / c \\
+& \hbar \lesssim \Delta p_x \Delta  & & \hbar \lesssim \Delta E \Delta t
+\end{align*}
+\subsection{Photoelectric Effect}
+Electrons eject from a metal, with energy $T$, from absorption of light with energy $h \nu$
+\[
+T_\text{max} = h \nu - \phi_0 \quad \phi_0 = \text{Work function of metal}
+\]
+
+\subsection{Compton Effect}
+\begin{minipage}{\linewidth}%
+\begin{minipage}[l]{0.40\linewidth}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}
+\draw [->, line width=1, snake it](-2,0) -- (-0.2,0);
+\node[draw, circle, fill, minimum size=0.2cm] at (0,0) {};
+\draw [->, line width=1, snake it](0,0) -- (2,2);
+\draw [->, line width=1](0,0) -- (2,-1);
+\draw [-, line width=1, dashed](0.0, 0) -- (1.5,0);
+\draw[->, line width=1] (1.5,0) arc(0:-39:1);
+\draw[->, line width=1] (1.5,0) arc (0:60:1);
+\node at (1.2,-0.29) {$\phi$};
+\node at (1.2,0.35) {$\theta$};
+\node at (0.5,-0.8) {${E_e}', {P_e}'$};
+\node at (1.3,1.8) {$h \nu'$};
+\node at (-1,0.3) {$h \nu$};
+\node at (-0,0.4) {$m_e$};
+\end{tikzpicture}
+}
+\end{minipage}%
+%}
+%\end{wrapfigure}
+\begin{minipage}[r]{0.58\linewidth}
+\begin{align*}
+& h \nu' = \frac{h \nu}{1 + \frac{h\nu}{m_e c^2} (1 - \cos{\theta})} \\
+& \Delta \lambda = \frac{h}{m_e c} (1 - \cos{\theta}) \\
+& T_e = h\nu - h\nu' \\
+& T_e = h \nu \frac{1-\cos{\theta}}{\frac{m_e c^2}{h \nu} + 1 - \cos{\theta}} \\
+& T_\text{max} = \frac{2 h \nu}{2 + m_e c^2 / h \nu} 
+\end{align*}
+\end{minipage}%
+\end{minipage}%
+\begin{align*}
+\tan{\phi} &= \frac{\sin{\theta}}{(1 + h\nu/m_e c^2)(1-\cos{\theta})} \\
+\atan{\frac{\theta}{2}} &= \left(1 + \frac{h \nu}{m_e c^2} \right) \tan{\phi}
+\end{align*}

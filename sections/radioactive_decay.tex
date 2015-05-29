@@ -1,0 +1,80 @@
+\section{Radioactive Decay}
+\begin{align*}
+N &- \text{\# Atoms} & \lambda &- \text{Decay Constant} \\
+A &- \text{Activity} & SA &- \text{Specific Activity} \\
+T_{1 / 2} &- \text{Half life} & M &- \text{Molar Mass}\\
+dN &= -\lambda N dt & A &= -\frac{dN}{dt} = \lambda N\\
+\frac{N}{N_0} &= \frac{A}{A_0} = e^{-\lambda t} & T_{1 / 2} &= \frac{\ln{2}}{\lambda}
+\end{align*} 
+\begin{align*}
+SA &= \frac{\si{\mole} ~ \lambda}{M} = \frac{\SI{4.17e23}{}}{M~T_{1 / 2}} \\
+SA &= \frac{1600}{T (\text{years})} \times \frac{226}{A (\text{Mass \#})} \SI{}{\curie\per\gram}
+\end{align*}
+
+\subsection{Decay Chains}
+\subsubsection{General Case}
+\begin{gather*}
+N_n(t) = \prod_{j=1}^{n-1} \lambda_j \sum_{i=1}^n \sum_{j=i}^n 
+\left ( \frac{N_i(0)e^{-\lambda_j t}}{\prod_{p=i, p\neq j}^n (\lambda_p-\lambda_j)} \right ) \\
+N_n(t) \simeq N \frac{\lambda_j}{\lambda_n} \exp{-\lambda_j t} \quad \lambda_j \ll \lambda_1 \ldots \lambda_n
+\end{gather*}
+
+\subsubsection{Decaying Daughter}
+\[N_2 = \frac{\lambda_1 N_{1_0}}{\lambda_2 - \lambda_1} \left( e^{-\lambda_1 t} - e^{-\lambda_2 t} \right) \]
+
+\subsubsection{Secular Equilibrium $(T_1 \gg T_2)$}
+\begin{align*}
+\frac{dN_2}{dt} &= A_1 - \lambda_2 N_2 \\
+A_2 &= A_1 \left( 1 - e^{\lambda_2 t} \right) + A_{2_0} e^{-\lambda_2 t}
+\end{align*}
+If $A_{2_0} = 0,~t \gtrsim 7~T_2$ then $A_1 = A_2$.
+
+\subsubsection{Transient Equilibrium $(T_1 \gtrsim T_2)$}
+\[ \lambda_2 N_2 = \frac{\lambda_2 \lambda_1 N_{1_0} e^{-\lambda_1 t}}{\lambda_2 - \lambda_1} = A_2 \frac{\lambda_2 A_1}{\lambda_2 - \lambda_1} \]
+\begin{align*}
+& \text{Max } A_2 & t &= \frac{1}{\lambda_2 - \lambda_1} \log{\frac{\lambda_2}{\lambda_1}} \\
+& \text{Max } A_1 + A_2 & t &= \frac{1}{\lambda_2 - \lambda_1} \log{\frac{\lambda^2_2}{2\lambda_1\lambda_2 - \lambda^2_1}}
+\end{align*}
+
+\subsection{Decay Channels}
+
+\subsubsection{$\alpha$ Decay: \textnormal{$\text{P}^A_Z \rightarrow \text{D}^{A-4}_{Z-2} + \text{He}^4_2$}}
+
+Usually heavy elements ($Z \geq 83$). Short range, usually radioactive daughters, harmful if inhaled or ingested. Radium, an $\alpha$ emitter seeks bone
+\begin{gather*}
+Q_\alpha = \Delta_P - \Delta_D - \Delta_{\text{He}} = E_\alpha + E_{M_N} \\
+E_\alpha = \frac{m~Q_\alpha }{m_\alpha + M_N} \quad E_{M_N} = \frac{M_N~Q_\alpha}{m_\alpha + M_N}
+\end{gather*}
+
+\subsubsection{$\beta^-$ Decay: \textnormal{$\text{P}^A_Z \rightarrow \text{D}^A_{Z+1} + \beta^0_{-1} + \bar{\nu}^0_0$}}
+
+Pure $\beta^-$ emitters: H\textsuperscript{3}, C\textsuperscript{14}, P\textsuperscript{32}, Sr\textsuperscript{90}, Y\textsuperscript{90} \\
+Mixed $\beta^- / \gamma$ emitters: Co\textsuperscript{60}, Cs\textsuperscript{137} \\
+Can penetrate skin, internal hazard. \SI{}{\mega\electronvolt} $\beta^-$ can emit bremsstrahlung in heavy-metal shielding, creating $\gamma$ hazard
+\begin{gather*}
+Q_{\beta^-} = \Delta_P - \Delta_D = E_{\beta^-} + E_{\bar{\nu}} \\
+0 \leq E_{\beta^-} \leq Q_{\beta^-} \quad \bar{E}_{\beta^-} \simeq Q_{\beta^-} / 3
+\end{gather*}
+
+\subsubsection{$\beta^+$ Decay: \textnormal{$\text{P}^A_Z \rightarrow \text{D}^A_{Z-1} + \beta^0_{+1} + \nu^0_0$}}
+Same effect as electron capture. Accompanied by annihilation $\gamma$, $E_\gamma = \SI{0.511}{\mega\electronvolt}$. Competes with EC.
+\begin{gather*}
+Q_{\beta^+} = \Delta_P - \Delta_D - 2 m_e c^2 \\ 
+\Delta_P - \Delta_D > 2 m_e c^2 = \SI{1.022}{\mega\electronvolt}
+\end{gather*}
+
+\subsubsection{$\gamma$ Decay: \textnormal{$\text{P}^A_Z \rightarrow \text{D}^{A}_{Z} + \gamma^0_0$}}
+
+$\gamma$ emissions energies create isotope signatures, basis of $\gamma$ spectroscopy. Nuclear excited state lifetimes of $\gamma$ decay typically \SI{10e-10}{\second}, except for much longer lived metastable states. Deeply penetrating, dominates over EC for light nuclei.
+\[ Q_\gamma = \Delta_P - \Delta_D \]
+
+\subsubsection{Internal Conversion (IC)}
+
+Alternative to $\gamma$ emission where nuclear excitation energy is transferred to K or L shell electron, ejecting from atom. Usually followed by fast $\gamma$ emission. Dominates for heavy nuclei
+\[ \alpha = \frac{N_e}{N_\gamma} \quad E_e = E^* - E_B \]
+$\alpha$, IC coefficient for nuclear transition, increases with $Z^3$, decrease with $E^*$.
+
+\subsubsection{Electron Capture (EC): \\ \textnormal{$\text{P}^A_Z + e^0_{-1} \rightarrow \text{D}^{A}_{Z-1} + \nu^0_0$}}
+
+Nucleus captures orbital electron, outgoing neutrino energy $E_\nu = Q_{EC}$. Leaves inner shell vacancy, emitting X-rays and auger electrons of characteristic energies. With electron binding energy $E_B$,
+\[ Q_{EC} = \Delta_P - \Delta_D - E_B \quad \Delta_P - \Delta_D > E_B \]

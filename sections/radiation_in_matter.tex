@@ -1,0 +1,106 @@
+\section{Radiation In Matter}
+Single collision, incoming particle ($M$, $E$) can transfer at most $Q_max$ to resting particle $m$
+\[ Q_{max} = \frac{2 \gamma^2 m V^2}{1 + 2 \gamma m / M + m^2 / M^2} \simeq \frac{4 m M E}{(M+m)^2} \]
+\[ Q_{max} \simeq 2 \gamma^2 m V^2 = 2 \gamma^2 m c^2 \beta^2 \quad \gamma m / M \ll 1 \]
+As $E$ increases, $Q_{max} / E \rightarrow 1$ \\
+
+Can define Linear Energy Transfer (LET)
+\[
+L \equiv \frac{dE}{dl}
+\]
+$dE$ is energy lost by \textbf{charged} particle due to atomic electron collisions travelling distance $dl$ \\ \\
+Related to Lineal Energy
+\[
+y \equiv \frac{\epsilon}{\bar{l}}
+\]
+$\epsilon$ is energy imparted to matter in volume, $\bar{l}$ is mean chord length of volume \\
+
+\subsubsection{Stopping Power, $S$}
+Avg total linear energy loss rate in matter
+\[ S = -\frac{dE}{dx} \]
+HCP and $\beta$ particles in matter eject atomic electrons, creating Delta Rays.
+
+\subsubsection{Restricted Stopping Power $S_\Delta$}
+Linear rate of energy loss due to collisions where energy transfer does not exceed $\Delta$. Related to Linear Energy Transfer (LET). 
+\[
+\text{LET}_\Delta = \left( - \frac{dE}{dx} \right)_\Delta \quad S = \text{LET}_\infty = \left( - \frac{dE}{dx} \right)_\infty
+\]
+
+\subsubsection{Mass Stopping Power}
+\[
+\frac{S}{\rho} = - \frac{1}{\rho} \frac{dE}{dx} \left[ \si[per-mode=symbol]{\mega\eV\square\centi\meter\per\gram} \right] \qquad
+\rho = \text{density}
+\]
+For compound of multiple elements
+\[
+\frac{S}{\rho} = \sum_i \frac{S_i}{\rho_i}
+\]
+
+\subsection{Heavy Charged Particles (HCP)}
+\subsubsection{Stopping Power}
+Bethe Formula for Stopping Power:
+\begin{align*}
+- \frac{dE}{dx} & = \frac{4 \pi k^2_0 z^2 e^4 n_e}{m_e c^2 \beta^2} \left[ \ln{\frac{2 m c^2 \beta^2}{I (1 - \beta^2)}} - \beta^2 \right] \\
+ & = \frac{\SI{5.08e-31}{} z^2 n_e}{\beta^2} \left[ F \left( \beta \right) - \ln{I_\text{eV}}  \right] \si{\mega\eV\per\centi\meter} \\
+ F \left( \beta \right) & = \ln{\frac{\SI{1.02e6}{} \beta^2}{1-\beta^2} - \beta^2} \\
+z & = \text{atomic number of HCP} \\
+n_e & = \text{electrons per unit volume in medium} \\
+I & = \text{mean excitation energy of medium} \\
+I & \simeq
+\begin{array}{lr}
+\begin{cases}
+\SI{19.0}{\eV}         & Z = 1~(\text{hydrogen}) \\
+11.2 + 11.7 Z \si{\eV} & 2 \leq Z \leq 13 \\
+52.8 + 8.71 Z \si{\eV} & Z > 13
+\end{cases}
+\end{array}
+\end{align*}
+\[
+n_e \ln{I} = \sum_i N_i Z_i \ln{I_i}
+\]
+
+\subsubsection{Range $R(\beta)~[\si{\gram\per\square\centi\meter}]$}
+\begin{align*}
+R (\beta) & = \frac{M}{z^2} f(\beta) &  f(\beta) & = \int_0^\beta \frac{g(\beta')}{G(\beta')} d\beta' \\
+\frac{R_1 (\beta)}{R_2 (\beta)} & = \frac{z_2^2 M_1}{z_1^2 M_2} & R(\beta) & = \frac{M}{z^2} R_p (\beta)
+\end{align*}
+Where $R_p (\beta)$ is the proton range in the material
+
+\subsubsection{Slowing Down Time $\tau$}
+Time to stop HCP in matter
+\[
+\tau \sim \frac{\text{T}}{V (-dE / dx)} \qquad \text{K.E. = T, V = velocity}
+\]
+
+\subsection{Electrons / Positrons ($\beta^\pm$)}
+Can emit through collisional and radiation (bremmstrahlung)
+\[
+\left( - \frac{dE}{dx} \right)^\pm_\text{tot} = \left( - \frac{dE}{dx} \right)^\pm_\text{col} + \left( - \frac{dE}{dx} \right)^\pm_\text{rad}
+\]
+\subsubsection{Collisional Stopping Power}
+\begin{flalign*}
+& \left( - \frac{dE}{dx} \right)^\pm_\text{col} = \\
+& \frac{\SI{5.08e-31}{} n_e}{\beta^2} \left[ G^\pm (\beta) - \ln{I_\text{eV}} \right] \si{\mega\eV\per\centi\meter} \\
+& G^\pm (\beta) = \ln{(\SI{3.61e5}{} \tau \sqrt{\tau + 2})} + F^\pm (\beta) \\
+& F^- (\beta) = \frac{1-\beta^2}{2} \left[ 1 + \frac{\tau^2}{8} - (2 \tau + 1) \ln{2} \right] \\
+& F^+ (\beta) = \\
+& \ln{2} - \frac{\beta^2}{24} \left[ 23 + \frac{14}{\tau + 2} + \frac{10}{(\tau + 2)^2} + \frac{4}{(\tau + 2)^3}\right]
+\end{flalign*}
+\subsubsection{Radiative Stopping Power}
+\[
+\frac{(-dE/dx)_{\text{rad}}^-}{(-dE/dx)_{\text{col}}^-} \simeq \frac{ZE_{e^-}}{800} \quad Z = \text{Material Z}
+\]
+Radiation Yield $Y$, amount of energy released as bremmstrahlung while slowing down completely
+\[
+Y \simeq \frac{\SI{6e-4} Z T}{1 + \SI{6e-4}{} Z T}
+\]
+\subsubsection{Range, $R(T)~[\si{\gram\per\square\centi\meter}]$}
+\begin{align*}
+& 0.412~T^{1.27 - 0.0954 \ln{T}} & 0.01 \leq T & \leq 2.5~\si{\mega\eV} \\
+& 0.530 T - 0.106 & T & > 2.5~\si{\mega\eV}
+\end{align*}
+
+\subsubsection{Slowing Down Time $\tau$}
+Same as HCP
+
+\subsection{Photons ($\gamma$)}

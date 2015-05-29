@@ -1,0 +1,41 @@
+\section{Dose Quantities}
+
+
+\subsection{Absorbed Dose}
+For mass $dm$ with mean energy imparted $d\bar{\epsilon}$ by ionizing radiation
+\[
+D \equiv \frac{d\bar{\epsilon}}{dm} \qquad \dot{D} \equiv \frac{dD}{dt}
+\]
+Measured in Gray
+\[
+\SI{1}{\gray} = \frac{\SI{1}{\joule}}{\SI{1}{\kilo\gram}} = \SI{100}{\rad} \\
+\]
+For thin layer with constant stopping power,
+\[D = \left( \frac{1}{\rho} \frac{dE}{dx} \right) \Phi \quad \Phi = \text{Flux} \left[ \si[per-mode=symbol]{\number\per\square\centi\meter\per\second} \right] \] 
+
+\subsection{Quality Factor}
+Q weights absorbed dose to the biological effectiveness of \textbf{charged} particles producing absorbed dose. Function of LET 
+
+\subsection{Dose Equivalent, $H$}
+\[
+H \equiv Q D
+\]
+Used for routine radiation limits, not for acute doses \\
+Measured in Sieverts
+\[
+\SI{1}{\sievert} = \frac{\SI{1}{\joule}}{\SI{1}{\kilo\gram}} = \SI{100}{\rem} \\
+\]
+
+\subsection{Equivalent Dose, $H_T$}
+\begin{align*}
+H_T & \equiv \sum_R w_R D_{T,R} \\
+D_{T,R} & \equiv \text{Mean tissue dose of radiation type R} \\
+w_R & \equiv \text{Radiation weighting factor}
+\end{align*}
+Radiation weighting factor relates type of particle or radiation for effectiveness of producing an absorbed dose
+
+\subsubsection{Effective Dose, $E$}
+\[
+E \equiv \sum_T w_T H_T = \sum_T w_T \sum_R w_R D_{T,R}
+\]
+$w_T$ is the tissue weighting factor, accounting for relative detriment
